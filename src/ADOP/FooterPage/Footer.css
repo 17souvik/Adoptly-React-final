@@ -1,0 +1,115 @@
+.footer {
+    background-color: #1A1A1D;
+    color: white;
+    padding: 3rem 0;
+   
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 2rem;
+}
+
+.footer-section h3 {
+    color: #ecf0f1;
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+  
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-section a {
+    color: #bdc3c7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+/* .footer-section a:hover {
+    color: #e74c3c;
+} */
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+    justify-content: center; /* Center align icons on smaller screens */
+}
+
+.social-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: #bdc3c7;
+    transition: fill 0.3s ease;
+}
+
+
+
+.copyright p.licence {
+    text-align: center;
+  
+    padding-top: 2rem;
+    border-top: 1px solid #34495e;
+    color: #bdc3c7;
+}
+
+.paw-print {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+p.About-footer {
+    color: #ecf0f1;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr; /* Stack sections in one column */
+        text-align: center; /* Center-align text for smaller screens */
+    }
+
+    .footer-section {
+        margin-bottom: 2rem;
+    }
+
+    .social-icons {
+        justify-content: center; /* Ensure icons are centered */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        padding: 2rem 0; /* Reduce padding for very small screens */
+    }
+
+    .footer-section h3 {
+        font-size: 1.1rem; /* Reduce font size */
+    }
+
+    .social-icons svg {
+        width: 20px;
+        height: 20px; /* Adjust icon size */
+    }
+}

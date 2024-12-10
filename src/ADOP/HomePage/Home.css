@@ -1,0 +1,58 @@
+.animal {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    padding: 2% 10% 2% 10% !important;
+    gap: 16px; 
+    margin: 0;
+}
+
+.animal-card{
+    height: 350px;
+    width: 300px;
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    /* border: 0.01rem solid #3B1C32; */
+    box-shadow: 3px 1px 10px #3B1C32;
+    border-radius: 4px;
+    
+}
+.animal-card i ,p ,a {
+   text-decoration: none;
+   padding-left: 10px;
+   
+   color: #3B1C32;
+   font-weight: 500;
+}
+.animal-card p{
+    margin: 0;
+}
+.animal-card img{
+     height: 76%;
+     width: 100%;
+     object-fit: cover;
+  
+     padding: 0;
+     padding-bottom: 5px;
+     margin: 0;
+
+}
+@media (max-width: 768px) {
+    .animal {
+        padding: 0 10%;
+    }
+
+    .animal_card {
+        width: 200px; 
+    }
+}
+
+@media (max-width: 480px) {
+    .animal {
+        padding: 0 5%;
+    }
+
+    .animal_card {
+        width: 150px; 
+    }
+}

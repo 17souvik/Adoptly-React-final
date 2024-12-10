@@ -1,0 +1,60 @@
+.gallary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+   
+    padding: 2% 20% 2% 20%;
+}
+
+.gallary-img {
+    height: 240px;
+    width: 300px;
+    overflow: hidden;
+   
+}
+
+.gallary-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+.gallary-part2 {
+   margin: 0;
+   padding: 0;
+     height: 100%;
+     width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  
+}
+
+.gallary-part2-img1, 
+.gallary-part2-img2 {
+    background-image: url('https://i.pinimg.com/736x/5c/fd/fc/5cfdfcec0f7d766de535cb14186f3bc0.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 900px; 
+    height: 500px; 
+    margin: 10px; 
+    border-radius: 10px;
+}
+
+
+.gallary-part2-img1{
+    background-image: url('https://i.pinimg.com/736x/ff/ac/74/ffac7405212fb6875e0d552f032744ab.jpg'); 
+}
+
+.gallary-part2 h1 {
+    color: white;
+    text-align: center; 
+    font-size: 2rem; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+   
+   
+ }
+ 
+
