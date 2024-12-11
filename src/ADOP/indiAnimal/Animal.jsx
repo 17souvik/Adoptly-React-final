@@ -2,17 +2,27 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import AllData from "../Data/Data";
 import AnimalList from "../HomePage/AnimalList";
-import './Animal.css'
+import './Animal.css';
 
 export default function Animal() {
   const { category, id } = useParams();  
   const [animalDetails, setAnimalDetails] = useState(null);
+  const [isLiked, setIsLiked] = useState(false); // State to track heart color
+  const [isBought, setIsBought] = useState(false); // State to track buy status
 
   useEffect(() => {
     const Data = AllData();
     const animal = Data.find(animal => animal.id === parseInt(id) && animal.category.toLowerCase() === category.toLowerCase());
     setAnimalDetails(animal);
   }, [category, id]);
+
+  const handleWishlistClick = () => {
+    setIsLiked(!isLiked); 
+  };
+
+  const handleBuyClick = () => {
+    setIsBought(!isBought); 
+  };
 
   return (
     <>
@@ -23,18 +33,32 @@ export default function Animal() {
               <img src={animalDetails.image} alt={animalDetails.breed} />
            </div>
            <div className="indi-text">
-              <h3>{animalDetails.breed}</h3>
+              <i>@{animalDetails.buyer_name}</i>
+              <p>{animalDetails.description}</p>
+              <hr />
+              <h3 style={{ padding: 0, margin: 0 }}>{animalDetails.breed}</h3>
               <p>Age: {animalDetails.age}</p>
               <p>Place: {animalDetails.place}</p>
               <p>Price: {animalDetails.price}</p>
+              <div className="card-btn">
+                <button onClick={handleBuyClick}>
+                  <span className={`buy ${isBought ? "bought" : ""}`}>
+                    <i className="fas fa-cart-shopping"></i> {/* FontAwesome Buy Icon */}
+                  </span> Buy
+                </button>
+                <button className="wishlist-btn" onClick={handleWishlistClick}>
+                  <span className={`heart ${isLiked ? "liked" : ""}`}>
+                    <i className="fas fa-heart"></i> {/* FontAwesome Heart Icon */}
+                  </span> Wishlist
+                </button>
+              </div>
            </div>
         </div>
       ) : (
         <p>Animal not found!</p>
       )}
- 
     </div>
-    <AnimalList/>
+    <AnimalList />
     </>
   );
 }

@@ -1,49 +1,56 @@
 .animal {
     display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    padding: 2% 10% 2% 10% !important;
-    gap: 16px; 
+    grid-template-columns: repeat(3, 1fr);
+    padding: 2% 10%;
+    gap: 16px;
     margin: 0;
 }
 
-.animal-card{
+.animal-card {
     height: 350px;
     width: 300px;
     overflow: hidden;
     padding: 0;
     margin: 0;
-    /* border: 0.01rem solid #3B1C32; */
     box-shadow: 3px 1px 10px #3B1C32;
     border-radius: 4px;
-    
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
 }
-.animal-card i ,p ,a {
-   text-decoration: none;
-   padding-left: 10px;
-   
-   color: #3B1C32;
-   font-weight: 500;
+
+.animal-card:hover {
+    transform: translateY(-10px); /* Slightly lifts the card */
+    box-shadow: 6px 4px 15px #3B1C32; /* Increases shadow on hover */
 }
-.animal-card p{
+
+.animal-card i, p,  a {
+    text-decoration: none;
+    padding-left: 10px;
+    color: #3B1C32;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.animal-card p {
     margin: 0;
 }
-.animal-card img{
-     height: 76%;
-     width: 100%;
-     object-fit: cover;
-  
-     padding: 0;
-     padding-bottom: 5px;
-     margin: 0;
 
+.animal-card img {
+    height: 76%;
+    width: 100%;
+    object-fit: cover;
+    padding: 0;
+    padding-bottom: 5px;
+    margin: 0;
 }
+
 @media (max-width: 768px) {
     .animal {
         padding: 0 10%;
     }
 
-    .animal_card {
-        width: 200px; 
+    .animal-card {
+        width: 100%; /* Automatically adjusts within the grid */
     }
 }
 
@@ -52,7 +59,7 @@
         padding: 0 5%;
     }
 
-    .animal_card {
-        width: 150px; 
+    .animal-card {
+        width: 100%; /* Automatically adjusts within the grid */
     }
 }

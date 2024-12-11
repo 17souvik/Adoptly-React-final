@@ -4,6 +4,7 @@ import './Navbar.css';
 
 export default function Navbar() {
   return (
+    
     <div className="navbar">
      <div className="logo">
      <h1 className="logo">Adoptly</h1>
