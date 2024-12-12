@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import AllData from "../Data/Data";
 import AnimalList from "../HomePage/AnimalList";
 import './Animal.css';
@@ -39,13 +39,19 @@ export default function Animal() {
               <h3 style={{ padding: 0, margin: 0 }}>{animalDetails.breed}</h3>
               <p>Age: {animalDetails.age}</p>
               <p>Place: {animalDetails.place}</p>
-              <p>Price: {animalDetails.price}</p>
+              <p>Price: ₹{animalDetails.price}</p>
               <div className="card-btn">
-                <button onClick={handleBuyClick}>
+              <NavLink  to={`/adoptly/${category}/${id}/Payment`} 
+                            state={{ price: animalDetails.price }}>
+                <button onClick={handleBuyClick} className="buy-btn">
                   <span className={`buy ${isBought ? "bought" : ""}`}>
                     <i className="fas fa-cart-shopping"></i> {/* FontAwesome Buy Icon */}
                   </span> Buy
                 </button>
+                </NavLink>
+                {/* <NavLink  to={`/adoptly/${category}/${id}/Payment`} 
+                            state={{ price: animalDetails.price }}>
+                              <button className="adopt-button" onClick={handleAdoptClick}>Adopt</button></NavLink> */}
                 <button className="wishlist-btn" onClick={handleWishlistClick}>
                   <span className={`heart ${isLiked ? "liked" : ""}`}>
                     <i className="fas fa-heart"></i> {/* FontAwesome Heart Icon */}

@@ -394,11 +394,14 @@ const animalData = [
       "care_suggestions": "Provide a clean, dry, and comfortable cage."
     },
    
-  ]
+  ];
+
+  const transformedData = animalData.map((animal) => ({
+    ...animal,
+    price: animal.price.replace("₹", ""), // Remove ₹ symbol
+  }));
   
-
-;
-
-export default function AllData() {
-  return animalData;
-}
+  export default function AllData() {
+    return transformedData;
+  }
+  

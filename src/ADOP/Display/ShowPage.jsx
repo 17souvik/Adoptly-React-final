@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { useParams, NavLink } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useParams } from "react-router-dom";
 import AllData from "../Data/Data";
 import './ShowPage.css';
 
@@ -25,7 +25,7 @@ export default function ShowPage() {
                                 <h3>{animal.breed}</h3>
                                 <p>Age: {animal.age}</p>
                                 <p>Place: {animal.place}</p>
-                                <p>Price: {animal.price}</p>
+                                <p>Price: ₹{animal.price}</p>
                             </div>
                         </NavLink>
                     ))
